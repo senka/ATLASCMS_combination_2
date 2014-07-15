@@ -1,3 +1,18 @@
+
+setup:
+
+cmsrel CMSSW_6_1_1
+cd CMSSW_6_1_1/src
+cmsenv
+mkdir CombinedEWKAnalysis
+git clone https://github.com/senka/ATLASCMS_combination_2 CombinedEWKAnalysis
+mkdir HiggsAnalysis
+git clone https://github.com/senka/ATLASCMS_combination_2_Higgs HiggsAnalysis
+scram b
+
+
+/////////////////////////////////////////////
+
 ch1,ch2,ch3,ch4 = ATLAS 4l
 ch5,ch6,ch7 = ATLAS 2l2nu
 mu,el,elmu = CMS 4l
