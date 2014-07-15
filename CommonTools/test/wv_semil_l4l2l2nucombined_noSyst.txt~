@@ -1,0 +1,33 @@
+Combination of wv_semil_l4boosted.txt  wv_semil_l2nu2boosted.txt
+imax 2 number of bins
+jmax 3 number of processes minus 1
+kmax 13 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes WV_semileptonic_bkg_l4               ch1                                  ./l4_boosted_ws.root WV_l4boosted:$PROCESS WV_l4boosted:$PROCESS_$SYSTEMATIC
+shapes WWgammaZ_WV_atgc_semileptonic_l4     ch1                                  ./l4_boosted_ws.root WV_l4boosted:ATGCPdf_$PROCESS WV_l4boosted:ATGCPdf_$PROCESS_$SYSTEMATIC
+shapes data_obs                             ch1                                  ./l4_boosted_ws.root WV_l4boosted:$PROCESS
+shapes WV_semileptonic_bkg_l2nu2            ch2                                  ./l2nu2_boosted_ws.root WV_l2nu2boosted:$PROCESS WV_l2nu2boosted:$PROCESS_$SYSTEMATIC
+shapes WWgammaZ_WV_atgc_semileptonic_l2nu2  ch2                                  ./l2nu2_boosted_ws.root WV_l2nu2boosted:ATGCPdf_$PROCESS WV_l2nu2boosted:ATGCPdf_$PROCESS_$SYSTEMATIC
+shapes data_obs                             ch2                                  ./l2nu2_boosted_ws.root WV_l2nu2boosted:$PROCESS
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1    ch2  
+observation  66.0   87.0 
+----------------------------------------------------------------------------------------------------------------------------------
+bin                                                    ch1                                  ch1                                  ch2                                  ch2                                
+process                                                WWgammaZ_WV_atgc_semileptonic_l4     WV_semileptonic_bkg_l4               WWgammaZ_WV_atgc_semileptonic_l2nu2  WV_semileptonic_bkg_l2nu2          
+process                                                -1                                   1                                    0                                    2                                  
+rate                                                   53.3900                              0.9310                               39.3500                              46.8900                            
+----------------------------------------------------------------------------------------------------------------------------------
+background_l2nu2_stat1_backshape   shape               -                                    -                                    -                                    1.0                                
+background_l2nu2_stat2_backshape   shape               -                                    -                                    -                                    1.0                                
+background_l2nu2_systDR_backshape   shape              -                                    -                                    -                                    1.0                                
+background_l2nu2_systMC_backshape   shape              -                                    -                                    -                                    1.0                                
+background_l4_stat1_backshape   shape                  -                                    1.0                                  -                                    -                                  
+background_l4_systDR_backshape   shape                 -                                    1.0                                  -                                    -                                  
+lumi_8TeV               lnN                            1.039                                -                                    1.039                                -                                  
+signal_2l2nu_reco_Shape   shape1                       -                                    -                                    1.0                                  -                                  
+signal_2l2nu_stat_Shape   shape1                       -                                    -                                    1.0                                  -                                  
+signal_2l2nu_th_Shape   shape1                         -                                    -                                    1.0                                  -                                  
+signal_4l_reco_Shape    shape1                         1.0                                  -                                    -                                    -                                  
+signal_4l_stat_Shape    shape1                         1.0                                  -                                    -                                    -                                  
+signal_4l_th_Shape      shape1                         1.0                                  -                                    -                                    -                                  

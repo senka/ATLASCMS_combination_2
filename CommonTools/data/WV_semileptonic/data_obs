@@ -1,0 +1,28 @@
+{
+//========= Macro generated from object: data_obs/plot_rebin
+//========= by ROOT version5.34/03
+   
+   TH1D *data_obs = new TH1D("data_obs","plot_rebin",5,0,5);
+   data_obs->SetBinContent(1,2.94838);
+   data_obs->SetBinContent(2,9.17935);
+   data_obs->SetBinContent(3,2.22337);
+   data_obs->SetBinContent(4,0.918191);
+   data_obs->SetBinContent(5,0.212503);
+   data_obs->SetEntries(5);
+
+   ci = TColor::GetColor("#000099");
+   data_obs->SetLineColor(ci);
+   data_obs->GetXaxis()->SetLabelFont(42);
+   data_obs->GetXaxis()->SetLabelSize(0.035);
+   data_obs->GetXaxis()->SetTitleSize(0.035);
+   data_obs->GetXaxis()->SetTitleFont(42);
+   data_obs->GetYaxis()->SetLabelFont(42);
+   data_obs->GetYaxis()->SetLabelSize(0.035);
+   data_obs->GetYaxis()->SetTitleSize(0.035);
+   data_obs->GetYaxis()->SetTitleFont(42);
+   data_obs->GetZaxis()->SetLabelFont(42);
+   data_obs->GetZaxis()->SetLabelSize(0.035);
+   data_obs->GetZaxis()->SetTitleSize(0.035);
+   data_obs->GetZaxis()->SetTitleFont(42);
+   data_obs->Draw("");
+}

@@ -1,0 +1,29 @@
+{
+//========= Macro generated from object: name_1/plot_rebin
+//========= by ROOT version5.34/03
+   
+   TH1D *name_1 = new TH1D("name_1","plot_rebin",5,0,5);
+   name_1->SetBinContent(1,2.94838);
+   name_1->SetBinContent(2,9.17935);
+   name_1->SetBinContent(3,2.22337);
+   name_1->SetBinContent(4,0.918191);
+   name_1->SetBinContent(5,0.212503);
+   name_1->SetEntries(5);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   name_1->SetLineColor(ci);
+   name_1->GetXaxis()->SetLabelFont(42);
+   name_1->GetXaxis()->SetLabelSize(0.035);
+   name_1->GetXaxis()->SetTitleSize(0.035);
+   name_1->GetXaxis()->SetTitleFont(42);
+   name_1->GetYaxis()->SetLabelFont(42);
+   name_1->GetYaxis()->SetLabelSize(0.035);
+   name_1->GetYaxis()->SetTitleSize(0.035);
+   name_1->GetYaxis()->SetTitleFont(42);
+   name_1->GetZaxis()->SetLabelFont(42);
+   name_1->GetZaxis()->SetLabelSize(0.035);
+   name_1->GetZaxis()->SetTitleSize(0.035);
+   name_1->GetZaxis()->SetTitleFont(42);
+   name_1->Draw("");
+}

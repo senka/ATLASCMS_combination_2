@@ -1,0 +1,26 @@
+void getYieldsFromInputFile(){
+
+  gROOT->ProcessLine(".L /afs/cern.ch/work/s/senka/public/plotsForVgammaPaper/ptg/CMSstyle_YuriStyle.C");
+  gROOT->ProcessLine("CMSstyle()");
+
+  TFile * file_mu=new TFile("/afs/cern.ch/work/s/senka/newgit_atgc_testing_28022014/CMSSW_6_1_1/src/CombinedEWKAnalysis/CommonTools/data/WV_semileptonic/mu_boosted_withSignalSyst_adjustedUnc.root","read");
+  file_mu->cd();
+
+  TH1F * histo_SM=(TH1F*)(diboson->Clone("name_x"));
+  
+  TFile * file_mu_signal=new TFile("/afs/cern.ch/work/s/senka/newgit_atgc_testing_28022014/CMSSW_6_1_1/src/CombinedEWKAnalysis/CommonTools/data/signal_mu_f5.root","read");
+  file_mu_signal->cd();
+
+  double f5z,f5g;
+  f5z=0.;
+  f5g=0.;
+
+  getYields(histo_SM,bin_content_lam_dk_1,f5z,f5g);
+
+}
+
+double getYields(TH1F * histo_SM,TH2D * histo_signal){
+
+  
+
+}

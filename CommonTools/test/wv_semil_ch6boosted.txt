@@ -1,0 +1,26 @@
+
+# Simple counting experiment, with one signal and a few background processes 
+imax 1  number of channels
+jmax 2  number of backgrounds
+kmax *  number of nuisance parameters (sources of systematical uncertainties)
+------------
+shapes WV_semileptonic_bkg1_ch6  ch6boosted ./ch6_boosted_ws.root WV_ch6boosted:$PROCESS WV_ch6boosted:$PROCESS
+shapes WV_semileptonic_bkg2_ch6  ch6boosted ./ch6_boosted_ws.root WV_ch6boosted:$PROCESS WV_ch6boosted:$PROCESS
+shapes data_obs                ch6boosted ./ch6_boosted_ws.root WV_ch6boosted:$PROCESS    
+shapes WWgammaZ_WV_atgc_semileptonic_ch6 ch6boosted ./ch6_boosted_ws.root WV_ch6boosted:ATGCPdf_$PROCESS WV_ch6boosted:ATGCPdf_$PROCESS   
+------------
+bin ch6boosted 
+observation 29.0
+------------
+bin                         ch6boosted					ch6boosted			ch6boosted       
+process			    WWgammaZ_WV_atgc_semileptonic_ch6    	WV_semileptonic_bkg1_ch6	WV_semileptonic_bkg2_ch6       
+process                     0	  	       				1 				2       
+rate                        15.66	 			8.38 			7.58           
+------------
+lumi_8TeV           trG     0.039             				0.039				-
+l2nu2_ch6_background_MC_stat        trG     -                           0.0883054892601                             -
+background_MC_syst        trG     -                           0.0226730310263                             -
+l2nu2_ch6_background_DD_to0exp_stat        trG     -                           -                             0.354881266491
+even_background_DD_syst       trG     -                           -                             0.089709762533
+l2nu2_ch6_signal_stat       trG     0.0178799489144                           -                             -
+signal_recoth       trG     0.109118821779                           -                             -

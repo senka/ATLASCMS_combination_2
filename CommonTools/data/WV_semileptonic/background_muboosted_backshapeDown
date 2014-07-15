@@ -1,0 +1,27 @@
+{
+//========= Macro generated from object: background_muboosted_backshapeDown/plot_rebin
+//========= by ROOT version5.34/03
+   
+   TH1D *background_muboosted_backshapeDown = new TH1D("background_muboosted_backshapeDown","plot_rebin",5,0,5);
+   background_muboosted_backshapeDown->SetBinContent(1,0.146382);
+   background_muboosted_backshapeDown->SetBinContent(2,0.263488);
+   background_muboosted_backshapeDown->SetBinContent(3,0.0585529);
+   background_muboosted_backshapeDown->SetBinContent(4,0.0292765);
+   background_muboosted_backshapeDown->SetEntries(5);
+
+   ci = TColor::GetColor("#000099");
+   background_muboosted_backshapeDown->SetLineColor(ci);
+   background_muboosted_backshapeDown->GetXaxis()->SetLabelFont(42);
+   background_muboosted_backshapeDown->GetXaxis()->SetLabelSize(0.035);
+   background_muboosted_backshapeDown->GetXaxis()->SetTitleSize(0.035);
+   background_muboosted_backshapeDown->GetXaxis()->SetTitleFont(42);
+   background_muboosted_backshapeDown->GetYaxis()->SetLabelFont(42);
+   background_muboosted_backshapeDown->GetYaxis()->SetLabelSize(0.035);
+   background_muboosted_backshapeDown->GetYaxis()->SetTitleSize(0.035);
+   background_muboosted_backshapeDown->GetYaxis()->SetTitleFont(42);
+   background_muboosted_backshapeDown->GetZaxis()->SetLabelFont(42);
+   background_muboosted_backshapeDown->GetZaxis()->SetLabelSize(0.035);
+   background_muboosted_backshapeDown->GetZaxis()->SetTitleSize(0.035);
+   background_muboosted_backshapeDown->GetZaxis()->SetTitleFont(42);
+   background_muboosted_backshapeDown->Draw("");
+}

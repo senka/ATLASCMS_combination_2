@@ -1,0 +1,29 @@
+[Global]
+par1Name = dk
+par1PlotName = #lambda
+par2Name = lam
+par2PlotName = #Delta g^{Z}
+
+[ch5]
+Nbkg=2
+bkg1_name=l2nu2_ch1_background_MC
+bkg1_shape_syst=l2nu2_ch1_background_MC_stat,l2nu2_ch1_background_MC_syst
+bkg2_name=l2nu2_ch1_background_DD
+bkg2_shape_syst=l2nu2_ch1_background_DD_to0_stat,l2nu2_ch1_background_DD_syst
+signal_shape_syst=l2nu2_ch1_signal_stat,l2nu2_ch1_signal_recoth
+
+[ch6]
+Nbkg=2
+bkg1_name=l2nu2_ch2_background_MC
+bkg1_shape_syst=l2nu2_ch2_background_MC_stat,l2nu2_ch2_background_MC_syst
+bkg2_name=l2nu2_ch2_background_DD
+bkg2_shape_syst=l2nu2_ch2_background_DD_to0_stat,l2nu2_ch2_background_DD_syst
+signal_shape_syst=l2nu2_ch2_signal_stat,l2nu2_ch2_signal_recoth
+
+[ch7]
+Nbkg=2
+bkg1_name=l2nu2_ch3_background_MC
+bkg1_shape_syst=l2nu2_ch3_background_MC_stat,l2nu2_ch3_background_MC_syst
+bkg2_name=l2nu2_ch3_background_DD
+bkg2_shape_syst=l2nu2_ch3_background_DD_to0_stat,l2nu2_ch3_background_DD_syst
+signal_shape_syst=l2nu2_ch3_signal_stat,l2nu2_ch3_signal_recoth

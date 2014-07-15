@@ -1,0 +1,59 @@
+background_MC_syst	  = -0.00388921	 +/-  0.993961
+even_background_DD_syst	  = -0.0413712	 +/-  0.995782
+l2nu2_ch1_background_DD_to0exp_stat	  = 0.165367	 +/-  0.823534
+l2nu2_ch1_background_MC_stat	  = 0.0323871	 +/-  0.985334
+l2nu2_ch1_signal_stat	  = 0.00917037	 +/-  0.993837
+l2nu2_ch2_background_DD_to0exp_stat	  = -0.201674	 +/-  0.885741
+l2nu2_ch2_background_MC_stat	  = -0.0488721	 +/-  0.993763
+l2nu2_ch2_signal_stat	  = -0.0166215	 +/-  0.99414
+l2nu2_ch3_background_DD_to0exp_stat	  = 0.0158832	 +/-  0.977125
+l2nu2_ch3_background_MC_stat	  = 0.00340757	 +/-  0.993676
+l2nu2_ch3_signal_stat	  = 0.000910922	 +/-  0.99442
+lZ	  = -0.00362141	 +/-  0.0119327	(limited)
+lumi_8TeV	  = -0.015356	 +/-  0.988915
+odd_background_DD_syst	  = 0.0495704	 +/-  0.97802
+signal_recoth	  = -0.0396637	 +/-  0.962808
+
+==================================================================================================================
+			SIGNAL (=S+B)
+
+	SHAPE(=S+B)
+RooSimultaneousOpt::model_s[ indexCat=CMS_channel ch1=pdf_binch1 ch2=pdf_binch2 ch3=pdf_binch3 extraConstraints=() ] = 1.2493
+	RooProdPdf::pdf_binch3[ background_MC_syst_Pdf * even_background_DD_syst_Pdf * l2nu2_ch1_background_DD_to0exp_stat_Pdf * l2nu2_ch1_background_MC_stat_Pdf * l2nu2_ch1_signal_stat_Pdf * l2nu2_ch2_background_DD_to0exp_stat_Pdf * l2nu2_ch2_background_MC_stat_Pdf * l2nu2_ch2_signal_stat_Pdf * l2nu2_ch3_background_DD_to0exp_stat_Pdf * l2nu2_ch3_background_MC_stat_Pdf * l2nu2_ch3_signal_stat_Pdf * lumi_8TeV_Pdf * odd_background_DD_syst_Pdf * signal_recoth_Pdf * pdf_binch3_nuis ] = 7.15402
+		SimpleGaussianConstraint::background_MC_syst_Pdf[ x=background_MC_syst mean=background_MC_syst_In sigma=1 ] = 1
+		RooAddPdf::pdf_binch3_nuis[ n_exp_final_binch3_proc_WV_semileptonic_bkg1_ch7 * shapeBkg_ch3_WV_semileptonic_bkg1_ch7_morph + n_exp_final_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7 * shapeSig_ch3_WWgammaZ_WV_atgc_semileptonic_ch7_morph + n_exp_final_binch3_proc_WV_semileptonic_bkg2_ch7 * shapeBkg_ch3_WV_semileptonic_bkg2_ch7_morph ] = 7.15402
+			RooProduct::n_exp_final_binch3_proc_WV_semileptonic_bkg1_ch7[ n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 * systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst * systeff_ch3_WV_semileptonic_bkg1_ch7_l2nu2_ch3_background_MC_stat ] = 4.14
+				n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 is variable
+				AsymPow::systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst[ kappaLow=0.978261 kappaHigh=1.02174 theta=background_MC_syst ] = 1
+
+			FastVerticalInterpHistPdf2::shapeBkg_ch3_WV_semileptonic_bkg1_ch7_morph[ coefList=(background_MC_syst,l2nu2_ch3_background_MC_stat) x=W_pt_ch7 ] = 1
+			RooProduct::n_exp_final_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7[ n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7 * shapeSig_WWgammaZ_WV_atgc_semileptonic_ch7_ch3__norm ] = 10.14
+			VerticalInterpPdf::shapeSig_ch3_WWgammaZ_WV_atgc_semileptonic_ch7_morph[ ] = 10.14
+				
+	NORMALIZATION(=s)
+RooProduct::n_exp_final_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7[ n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7 * shapeSig_WWgammaZ_WV_atgc_semileptonic_ch7_ch3__norm ] = 10.14	
+	ProcessNormalization::n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7[ thetaList=(lumi_8TeV) asymmThetaList=() otherFactorList=(Scaling_WWgammaZ_WV_atgc_semileptonic_ch7) ] = 10.14
+	RooProduct::shapeSig_WWgammaZ_WV_atgc_semileptonic_ch7_ch3__norm[ ATGCPdf_WWgammaZ_WV_atgc_semileptonic_ch7_integral1 * ATGCPdf_WWgammaZ_WV_atgc_semileptonic_ch7_integral2 ] = 1
+		AsymPow::ATGCPdf_WWgammaZ_WV_atgc_semileptonic_ch7_integral1[ kappaLow=kappaL_1 kappaHigh=kappaH_1 theta=l2nu2_ch3_signal_stat ] = 1
+
+	
+==================================================================================================================
+
+			BACKGROUND
+
+	SHAPE
+
+RooSimultaneousOpt::model_b[ indexCat=CMS_channel ch1=pdf_binch1_bonly ch2=pdf_binch2_bonly ch3=pdf_binch3_bonly extraConstraints=() ] = 0.104926
+	RooProdPdf::pdf_binch3_bonly[ background_MC_syst_Pdf * even_background_DD_syst_Pdf * l2nu2_ch1_background_DD_to0exp_stat_Pdf * l2nu2_ch1_background_MC_stat_Pdf * l2nu2_ch1_signal_stat_Pdf * l2nu2_ch2_background_DD_to0exp_stat_Pdf * l2nu2_ch2_background_MC_stat_Pdf * l2nu2_ch2_signal_stat_Pdf * l2nu2_ch3_background_DD_to0exp_stat_Pdf * l2nu2_ch3_background_MC_stat_Pdf * l2nu2_ch3_signal_stat_Pdf * lumi_8TeV_Pdf * odd_background_DD_syst_Pdf * signal_recoth_Pdf * pdf_binch3_bonly_nuis ] = 1
+		SimpleGaussianConstraint::background_MC_syst_Pdf[ x=background_MC_syst mean=background_MC_syst_In sigma=1 ] = 1
+		RooAddPdf::pdf_binch3_bonly_nuis[ n_exp_final_binch3_proc_WV_semileptonic_bkg1_ch7 * shapeBkg_ch3_WV_semileptonic_bkg1_ch7_morph + n_exp_final_binch3_proc_WV_semileptonic_bkg2_ch7 * shapeBkg_ch3_WV_semileptonic_bkg2_ch7_morph ] = 1
+			RooProduct::n_exp_final_binch3_proc_WV_semileptonic_bkg1_ch7[ n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 * systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst * systeff_ch3_WV_semileptonic_bkg1_ch7_l2nu2_ch3_background_MC_stat ] = 4.14
+				n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 is input parameter
+				AsymPow::systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst[ kappaLow=0.978261 kappaHigh=1.02174 theta=background_MC_syst ] = 1
+
+			FastVerticalInterpHistPdf2::shapeBkg_ch3_WV_semileptonic_bkg1_ch7_morph[ coefList=(background_MC_syst,l2nu2_ch3_background_MC_stat) x=W_pt_ch7 ] = 1
+	
+	NORMALIZATION
+RooProduct::n_exp_final_binch3_proc_WV_semileptonic_bkg1_ch7[ n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 * systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst * systeff_ch3_WV_semileptonic_bkg1_ch7_l2nu2_ch3_background_MC_stat ] = 4.14
+	n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 is input parameter
+	AsymPow::systeff_ch3_WV_semileptonic_bkg1_ch7_background_MC_syst[ kappaLow=0.978261 kappaHigh=1.02174 theta=background_MC_syst ] = 1

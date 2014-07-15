@@ -1,0 +1,29 @@
+[Global]
+par1Name = dk
+par1PlotName = #lambda
+par2Name = lam
+par2PlotName = #Delta g^{Z}
+
+[ch1]
+Nbkg=1
+bkg1_name=l4_ch1_background
+bkg1_shape_syst=l4_ch1_background_DD_factor1p5_stat,l4_ch1_background_DD_syst
+signal_shape_syst=l4_ch1_signal_stat,l4_ch1_signal_recoth
+
+[ch2]
+Nbkg=1
+bkg1_name=l4_ch2_background
+bkg1_shape_syst=l4_ch2_background_DD_factor1p5_stat,l4_ch2_background_DD_syst
+signal_shape_syst=l4_ch2_signal_stat,l4_ch2_signal_recoth
+
+[ch3]
+Nbkg=1
+bkg1_name=l4_ch3_background
+bkg1_shape_syst=l4_ch3_background_DD_factor1p5_stat,l4_ch3_background_DD_syst
+signal_shape_syst=l4_ch3_signal_stat,l4_ch3_signal_recoth
+
+[ch4]
+Nbkg=1
+bkg1_name=l4_ch4_background
+bkg1_shape_syst=l4_ch4_background_DD_to0exp_stat,l4_ch4_background_DD_syst
+signal_shape_syst=l4_ch4_signal_stat,l4_ch4_signal_recoth

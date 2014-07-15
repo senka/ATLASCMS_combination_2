@@ -1,0 +1,41 @@
+[Global]
+par1Name = dk
+par1PlotName = #lambda
+par2Name = lam
+par2PlotName = #Delta g^{Z}
+
+[ch1]
+Nbkg=1
+bkg1_name=background
+bkg_shape_syst=background_l4_stat1_backshape,background_l4_systDR_backshape
+signal_shape_syst=signal_4l_stat_Shape,signal_4l_reco_Shape,signal_4l_th_Shape
+
+[ch2]
+Nbkg=1
+bkg1_name=background
+bkg_shape_syst=background_l4_stat1_backshape,background_l4_systDR_backshape
+signal_shape_syst=signal_4l_stat_Shape,signal_4l_reco_Shape,signal_4l_th_Shape
+
+[ch3]
+bkg_shape_syst=background_l4_stat1_backshape,background_l4_systDR_backshape
+signal_shape_syst=signal_4l_stat_Shape,signal_4l_reco_Shape,signal_4l_th_Shape
+
+[ch4]
+Nbkg=1
+bkg1_name=background
+bkg_shape_syst=background_l4_stat1_backshape,background_l4_systDR_backshape
+signal_shape_syst=signal_4l_stat_Shape,signal_4l_reco_Shape,signal_4l_th_Shape
+
+[ch5]
+Nbkg=1
+bkg1_name=background
+bkg_shape_syst=background_l2nu2_stat1_backshape,background_l2nu2_stat2_backshape,background_l2nu2_systDR_backshape,background_l2nu2_systMC_backshape
+signal_shape_syst=signal_2l2nu_stat_Shape,signal_2l2nu_reco_Shape,signal_2l2nu_th_Shape
+
+[ch6]
+bkg_shape_syst=background_l2nu2_stat1_backshape,background_l2nu2_stat2_backshape,background_l2nu2_systDR_backshape,background_l2nu2_systMC_backshape
+signal_shape_syst=signal_2l2nu_stat_Shape,signal_2l2nu_reco_Shape,signal_2l2nu_th_Shape
+
+[ch7]
+bkg_shape_syst=background_l2nu2_stat1_backshape,background_l2nu2_stat2_backshape,background_l2nu2_systDR_backshape,background_l2nu2_systMC_backshape
+signal_shape_syst=signal_2l2nu_stat_Shape,signal_2l2nu_reco_Shape,signal_2l2nu_th_Shape

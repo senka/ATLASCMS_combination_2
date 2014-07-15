@@ -1,0 +1,28 @@
+{
+//========= Macro generated from object: signal_mu_thDown/signal_mu_thDown
+//========= by ROOT version5.34/03
+   
+   TH1D *signal_mu_thDown = new TH1D("signal_mu_thDown","signal_mu_thDown",5,0,5);
+   signal_mu_thDown->SetBinContent(1,2.83045);
+   signal_mu_thDown->SetBinContent(2,8.81218);
+   signal_mu_thDown->SetBinContent(3,2.13444);
+   signal_mu_thDown->SetBinContent(4,0.881463);
+   signal_mu_thDown->SetBinContent(5,0.204003);
+   signal_mu_thDown->SetEntries(5);
+
+   ci = TColor::GetColor("#000099");
+   signal_mu_thDown->SetLineColor(ci);
+   signal_mu_thDown->GetXaxis()->SetLabelFont(42);
+   signal_mu_thDown->GetXaxis()->SetLabelSize(0.035);
+   signal_mu_thDown->GetXaxis()->SetTitleSize(0.035);
+   signal_mu_thDown->GetXaxis()->SetTitleFont(42);
+   signal_mu_thDown->GetYaxis()->SetLabelFont(42);
+   signal_mu_thDown->GetYaxis()->SetLabelSize(0.035);
+   signal_mu_thDown->GetYaxis()->SetTitleSize(0.035);
+   signal_mu_thDown->GetYaxis()->SetTitleFont(42);
+   signal_mu_thDown->GetZaxis()->SetLabelFont(42);
+   signal_mu_thDown->GetZaxis()->SetLabelSize(0.035);
+   signal_mu_thDown->GetZaxis()->SetTitleSize(0.035);
+   signal_mu_thDown->GetZaxis()->SetTitleFont(42);
+   signal_mu_thDown->Draw("");
+}

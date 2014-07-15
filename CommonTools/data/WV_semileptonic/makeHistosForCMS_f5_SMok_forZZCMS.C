@@ -1,0 +1,175 @@
+void makeHistosForCMS_f5_SMok_forZZCMS(){
+
+  ///////////////////////////////////////////////////
+  //
+  //             muons
+  //
+
+  TH1D * diboson_mu_tmp=new TH1D();
+  TH1D * data_obs_mu_tmp=new TH1D();
+  TH1D * background_mu_tmp=new TH1D();
+  TH1D * background_muboosted_backshapeUp_mu_tmp=new TH1D();
+  TH1D * background_muboosted_backshapeDown_mu_tmp=new TH1D();
+  TH1D * signal_mu_thUp=new TH1D("signal_mu_thUp","signal_mu_thUp",5,0,5.);
+  TH1D * signal_mu_thDown=new TH1D("signal_mu_thDown","signal_mu_thDown",5,0,5.);
+  
+
+  TFile * file_mu=new TFile("mu_boosted_withSignalSyst_adjustedUnc_c.root","read");
+  file_mu->cd();
+  diboson_mu_tmp=(TH1D*)(diboson->Clone("name_1"));
+  data_obs_mu_tmp=(TH1D*)(data_obs->Clone("naem_2"));
+  background_mu_tmp=(TH1D*)(background->Clone("name_3"));
+  background_muboosted_backshapeUp_mu_tmp=(TH1D*)(background_muboosted_backshapeUp->Clone("background_muboosted_backshapeUp_x"));
+  background_muboosted_backshapeDown_mu_tmp=(TH1D*)(background_muboosted_backshapeDown->Clone("background_muboosted_backshapeDown_x"));
+
+
+  diboson_mu_tmp->SetBinContent(1,2.66922870025);
+  diboson_mu_tmp->SetBinContent(2,8.28693316093);
+  diboson_mu_tmp->SetBinContent(3,1.92620277151);
+  diboson_mu_tmp->SetBinContent(4,0.870540395014);
+  diboson_mu_tmp->SetBinContent(5,0.203597569865);
+
+  for (int i=1;i<6;i++){
+    double yield=diboson_mu_tmp->GetBinContent(i);
+    signal_mu_thUp->SetBinContent(i,yield*1.07);
+    signal_mu_thDown->SetBinContent(i,yield*0.93);
+  }
+
+  /*
+2.66922870025	0.0	0.0	0.263264497271	1.85644374523	0.0	0.0	0.0	0.0	0.0	0.0	0.0	227.110233687	18.5696861183	130.954128575
+8.28693316093	0.0	0.0	-1.44942723732	-1.48949100918	0.0	0.0	0.0	0.0	0.0	0.0	0.0	409.496750844	23.6574539765	321.770632728
+1.92620277151	0.0	0.0	0.539702863188	1.25228155058	0.0	0.0	0.0	0.0	0.0	0.0	0.0	170.819231425	90.6011061131	182.015946996
+0.870540395014	0.0	0.0	0.322710612004	-0.897148673908	0.0	0.0	0.0	0.0	0.0	0.0	0.0	417.827969363	368.299339066	550.362951769
+0.203597569865	0.0	0.0	0.288147304453	-2.89174713898	0.0	0.0	0.0	0.0	0.0	0.0	0.0	3474.89506392	3128.90901118	4736.31263175
+  */
+
+  //  TFile * file_mu_out=new TFile("mu_boosted_withSignalSyst_signalSyst_adjustedUnc_f5_SMok_forZZCMS.root","recreate");
+  TFile * file_mu_out=new TFile("mu_ZZ_4l_7TeV_f5_boosted.root","recreate");
+  file_mu_out->cd();
+  diboson_mu_tmp->Write("diboson");
+  data_obs_mu_tmp->Write("data_obs");
+  background_mu_tmp->Write("background");
+  background_muboosted_backshapeUp_mu_tmp->Write("background_7TeV_muboosted_backshapeUp");
+  background_muboosted_backshapeDown_mu_tmp->Write("background_7TeV_muboosted_backshapeDown");
+  signal_mu_thUp->Write("CMS_hzz2l2v_QCD_ACC_JVetoUp");
+  signal_mu_thDown->Write("CMS_hzz2l2v_QCD_ACC_JVetoDown");
+
+
+
+  ///////////////////////////////////////////////////
+  //
+  //             electrons
+  //
+
+  TH1D * diboson_el_tmp=new TH1D();
+  TH1D * data_obs_el_tmp=new TH1D();
+  TH1D * background_el_tmp=new TH1D();
+  TH1D * background_elboosted_backshapeUp_el_tmp=new TH1D();
+  TH1D * background_elboosted_backshapeDown_el_tmp=new TH1D();
+  TH1D * signal_el_thUp=new TH1D("signal_el_thUp","signal_el_thUp",5,0,5.);
+  TH1D * signal_el_thDown=new TH1D("signal_el_thDown","signal_el_thDown",5,0,5.);
+  
+
+  TFile * file_el=new TFile("el_boosted_withSignalSyst_adjustedUnc_c.root","read");
+  file_el->cd();
+  diboson_el_tmp=(TH1D*)(diboson->Clone("name_1y"));
+  data_obs_el_tmp=(TH1D*)(data_obs->Clone("data_obsy"));
+  background_el_tmp=(TH1D*)(background->Clone("data_oy"));
+  background_elboosted_backshapeUp_el_tmp=(TH1D*)(background_elboosted_backshapeUp->Clone("background_elboosted_backshapeUpy"));
+  background_elboosted_backshapeDown_el_tmp=(TH1D*)(background_elboosted_backshapeDown->Clone("background_elboosted_backshapeDowny"));
+
+
+  diboson_el_tmp->SetBinContent(1,1.93897618702);
+  diboson_el_tmp->SetBinContent(2,5.32708780326);
+  diboson_el_tmp->SetBinContent(3,1.14718265126);
+  diboson_el_tmp->SetBinContent(4,0.477970273484);
+  diboson_el_tmp->SetBinContent(5,0.0948956885346);
+
+  for (int i=1;i<6;i++){
+    double yield=diboson_el_tmp->GetBinContent(i);
+    signal_el_thUp->SetBinContent(i,yield*1.07);
+    signal_el_thDown->SetBinContent(i,yield*0.93);
+  }
+
+  /*
+1.93897618702	0.0	0.0	-0.0878376913919	0.31169702273	0.0	0.0	0.0	0.0	0.0	0.0	0.0	129.239704413	-4.70014828589	65.6649550038
+5.32708780326	0.0	0.0	1.16272485686	0.0575004175795	0.0	0.0	0.0	0.0	0.0	0.0	0.0	275.339852963	26.930250393	143.083268305
+1.14718265126	0.0	0.0	0.697868373897	-0.118599679193	0.0	0.0	0.0	0.0	0.0	0.0	0.0	111.968654868	43.3276429624	108.826160233
+0.477970273484	0.0	0.0	0.0560622574199	0.420062549469	0.0	0.0	0.0	0.0	0.0	0.0	0.0	260.825020988	215.041911103	365.253755994
+0.0948956885346	0.0	0.0	-0.221962757172	-1.11327143867	0.0	0.0	0.0	0.0	0.0	0.0	0.0	2026.65746938	1886.7574253	2873.48614047
+
+  */
+
+  //  TFile * file_el_out=new TFile("el_boosted_withSignalSyst_signalSyst_adjustedUnc_f5_SMok_forZZCMS.root","recreate");
+  TFile * file_el_out=new TFile("el_ZZ_4l_7TeV_f5_boosted.root","recreate");
+  file_el_out->cd();
+  diboson_el_tmp->Write("diboson");
+  data_obs_el_tmp->Write("data_obs");
+  background_el_tmp->Write("background");
+  background_elboosted_backshapeUp_el_tmp->Write("background_7TeV_elboosted_backshapeUp");
+  background_elboosted_backshapeDown_el_tmp->Write("background_7TeV_elboosted_backshapeDown");
+  signal_el_thUp->Write("CMS_hzz2l2v_QCD_ACC_JVetoUp");
+  signal_el_thDown->Write("CMS_hzz2l2v_QCD_ACC_JVetoDown");
+
+
+
+  ///////////////////////////////////////////////////
+  //
+  //             electronMuon
+  //
+
+  TH1D * diboson_elmu_tmp=new TH1D();
+  TH1D * data_obs_elmu_tmp=new TH1D();
+  TH1D * background_elmu_tmp=new TH1D();
+  TH1D * background_elmuboosted_backshapeUp_elmu_tmp=new TH1D();
+  TH1D * background_elmuboosted_backshapeDown_elmu_tmp=new TH1D();
+  TH1D * signal_elmu_thUp=new TH1D("signal_elmu_thUp","signal_elmu_thUp",5,0,5.);
+  TH1D * signal_elmu_thDown=new TH1D("signal_elmu_thDown","signal_elmu_thDown",5,0,5.);
+  
+
+  TFile * file_elmu=new TFile("elmu_boosted_withSignalSyst_adjustedUnc_c.root","read");
+  file_elmu->cd();
+  diboson_elmu_tmp=(TH1D*)(diboson->Clone("name_1z"));
+  data_obs_elmu_tmp=(TH1D*)(data_obs->Clone("data_obsz"));
+  background_elmu_tmp=(TH1D*)(background->Clone("data_oz"));
+  background_elmuboosted_backshapeUp_elmu_tmp=(TH1D*)(background_elmuboosted_backshapeUp->Clone("background_elmuboosted_backshapeUpz"));
+  background_elmuboosted_backshapeDown_elmu_tmp=(TH1D*)(background_elmuboosted_backshapeDown->Clone("background_elmuboosted_backshapeDownz"));
+
+
+  diboson_elmu_tmp->SetBinContent(1,5.0442686455);
+  diboson_elmu_tmp->SetBinContent(2,13.6565822129);
+  diboson_elmu_tmp->SetBinContent(3,3.32577216652);
+  diboson_elmu_tmp->SetBinContent(4,1.35178743752);
+  diboson_elmu_tmp->SetBinContent(5,0.315768797258);
+
+  for (int i=1;i<6;i++){
+    double yield=diboson_elmu_tmp->GetBinContent(i);
+    signal_elmu_thUp->SetBinContent(i,yield*1.07);
+    signal_elmu_thDown->SetBinContent(i,yield*0.93);
+  }
+
+  /*
+# Fij weights per bin (F00, F01, F02, F03, F04, F11, F12, F13, F14, F22, F23, F24, F33, F34, F44)
+5.0442686455	0.0	0.0	0.14009320148	0.679132410289	0.0	0.0	0.0	0.0	0.0	0.0	0.0	155.277309269	12.2146725099	143.420607412
+13.6565822129	0.0	0.0	-1.97674421801	1.79913095762	0.0	0.0	0.0	0.0	0.0	0.0	0.0	435.389516477	62.5323763029	453.273224323
+3.32577216652	0.0	0.0	0.128104351242	0.365129574337	0.0	0.0	0.0	0.0	0.0	0.0	0.0	172.394150168	120.488449622	321.135030451
+1.35178743752	0.0	0.0	1.29005180464	0.417214177972	0.0	0.0	0.0	0.0	0.0	0.0	0.0	649.891453933	586.415023223	893.818378318
+0.315768797258	0.0	0.0	2.59350767771	0.167167866281	0.0	0.0	0.0	0.0	0.0	0.0	0.0	5344.95451088	4851.44693045	7384.92167873
+
+  */
+
+  //  TFile * file_elmu_out=new TFile("elmu_boosted_withSignalSyst_signalSyst_adjustedUnc_f5_SMok_forZZCMS.root","recreate");
+  TFile * file_elmu_out=new TFile("elmu_ZZ_4l_7TeV_f5_boosted.root","recreate");
+  file_elmu_out->cd();
+  diboson_elmu_tmp->Write("diboson");
+  data_obs_elmu_tmp->Write("data_obs");
+  background_elmu_tmp->Write("background");
+  background_elmuboosted_backshapeUp_elmu_tmp->Write("background_7TeV_elmuboosted_backshapeUp");
+  background_elmuboosted_backshapeDown_elmu_tmp->Write("background_7TeV_elmuboosted_backshapeDown");
+  signal_elmu_thUp->Write("CMS_hzz2l2v_QCD_ACC_JVetoUp");
+  signal_elmu_thDown->Write("CMS_hzz2l2v_QCD_ACC_JVetoDown");
+
+
+
+
+}

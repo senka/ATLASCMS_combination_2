@@ -1,0 +1,28 @@
+{
+//========= Macro generated from object: signal_mu_thUp/signal_mu_thUp
+//========= by ROOT version5.34/03
+   
+   TH1D *signal_mu_thUp = new TH1D("signal_mu_thUp","signal_mu_thUp",5,0,5);
+   signal_mu_thUp->SetBinContent(1,3.06632);
+   signal_mu_thUp->SetBinContent(2,9.54653);
+   signal_mu_thUp->SetBinContent(3,2.31231);
+   signal_mu_thUp->SetBinContent(4,0.954919);
+   signal_mu_thUp->SetBinContent(5,0.221003);
+   signal_mu_thUp->SetEntries(5);
+
+   ci = TColor::GetColor("#000099");
+   signal_mu_thUp->SetLineColor(ci);
+   signal_mu_thUp->GetXaxis()->SetLabelFont(42);
+   signal_mu_thUp->GetXaxis()->SetLabelSize(0.035);
+   signal_mu_thUp->GetXaxis()->SetTitleSize(0.035);
+   signal_mu_thUp->GetXaxis()->SetTitleFont(42);
+   signal_mu_thUp->GetYaxis()->SetLabelFont(42);
+   signal_mu_thUp->GetYaxis()->SetLabelSize(0.035);
+   signal_mu_thUp->GetYaxis()->SetTitleSize(0.035);
+   signal_mu_thUp->GetYaxis()->SetTitleFont(42);
+   signal_mu_thUp->GetZaxis()->SetLabelFont(42);
+   signal_mu_thUp->GetZaxis()->SetLabelSize(0.035);
+   signal_mu_thUp->GetZaxis()->SetTitleSize(0.035);
+   signal_mu_thUp->GetZaxis()->SetTitleFont(42);
+   signal_mu_thUp->Draw("");
+}

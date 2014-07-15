@@ -1,0 +1,23 @@
+[Global]
+par1Name = dk
+par1PlotName = #lambda
+par2Name = lam
+par2PlotName = #Delta g^{Z}
+
+[el]
+Nbkg=1
+bkg1_name=background
+bkg1_shape_syst=background_elboosted_backshape
+signal_shape_syst=signal_th
+
+[mu]
+Nbkg=1
+bkg1_name=background
+bkg1_shape_syst=background_muboosted_backshape
+signal_shape_syst=signal_th
+
+[elmu]
+Nbkg=1
+bkg1_name=background
+bkg1_shape_syst=background_elmuboosted_backshape
+signal_shape_syst=signal_th

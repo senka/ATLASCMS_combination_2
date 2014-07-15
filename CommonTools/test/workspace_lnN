@@ -1,0 +1,51 @@
+bkgDD_stat_ch5	  = 0.16682	 +/-  0.824136
+bkgDD_stat_ch6	  = -0.199592	 +/-  0.888521
+bkgDD_stat_ch7	  = 0.0154841	 +/-  0.977778
+bkgDD_syst_even	  = -0.041102	 +/-  0.995795
+bkgDD_syst_odd	  = 0.049877	 +/-  0.978083
+bkgMC_stat_ch5	  = 0.0324518	 +/-  0.985419
+bkgMC_stat_ch6	  = -0.0481394	 +/-  0.993862
+bkgMC_stat_ch7	  = 0.00330705	 +/-  0.993706
+bkgMC_syst	  = -0.00397709	 +/-  0.993985
+lZ	  = -0.00372111	 +/-  0.0119906	(limited)
+lumi_8TeV	  = -0.020773	 +/-  0.981213
+sig_reco	  = -0.0484886	 +/-  0.961016
+sig_stat_ch5	  = 0.00909735	 +/-  0.993856
+sig_stat_ch6	  = -0.0182095	 +/-  0.994082
+sig_stat_ch7	  = 0.000765656	 +/-  0.994431
+
+==================================================================================================================
+			SIGNAL (=S+B)
+
+	SHAPE(=S+B)
+
+RooSimultaneousOpt::model_s[ indexCat=CMS_channel ch1=pdf_binch1 ch2=pdf_binch2 ch3=pdf_binch3 extraConstraints=() ] = 1.39805
+	RooProdPdf::pdf_binch3[ bkgDD_stat_ch5_Pdf * bkgDD_stat_ch6_Pdf * bkgDD_stat_ch7_Pdf * bkgDD_syst_even_Pdf * bkgDD_syst_odd_Pdf * bkgMC_stat_ch5_Pdf * bkgMC_stat_ch6_Pdf * bkgMC_stat_ch7_Pdf * bkgMC_syst_Pdf * lumi_8TeV_Pdf * sig_reco_Pdf * sig_stat_ch5_Pdf * sig_stat_ch6_Pdf * sig_stat_ch7_Pdf * pdf_binch3_nuis ] = 8.00582
+		SimpleGaussianConstraint::bkgDD_stat_ch5_Pdf[ x=bkgDD_stat_ch5 mean=bkgDD_stat_ch5_In sigma=1 ] = 1
+		RooAddPdf::pdf_binch3_nuis[ n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 * shapeBkg_WV_semileptonic_bkg1_ch7_ch3Pdf + n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7 * shapeSig_WWgammaZ_WV_atgc_semileptonic_ch7_ch3 + n_exp_binch3_proc_WV_semileptonic_bkg2_ch7 * shapeBkg_WV_semileptonic_bkg2_ch7_ch3Pdf ] = 8.00582
+			ProcessNormalization::n_exp_binch3_proc_WV_semileptonic_bkg1_ch7[ thetaList=(lumi_8TeV) asymmThetaList=(bkgMC_stat_ch7,bkgMC_syst) otherFactorList=() ] = 4.14
+			RooHistPdf::shapeBkg_WV_semileptonic_bkg1_ch7_ch3Pdf[ pdfObs=(W_pt_ch7) ] = 4.14
+			ProcessNormalization::n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7[ thetaList=(lumi_8TeV) asymmThetaList=(sig_reco,sig_stat_ch7) otherFactorList=(Scaling_WWgammaZ_WV_atgc_semileptonic_ch7) ] = 10.14
+			RooATGCSemiAnalyticPdf_wz::shapeSig_WWgammaZ_WV_atgc_semileptonic_ch7_ch3[ observable=W_pt_ch7 lZ=lZ dkg=dkg dg1=dg1 SM_shape=WV_semileptonic_SM_ch7_shape ] = 10.14
+
+
+
+	NORMALISATION(=S)
+ProcessNormalization::n_exp_binch3_proc_WWgammaZ_WV_atgc_semileptonic_ch7[ thetaList=(lumi_8TeV) asymmThetaList=(sig_reco,sig_stat_ch7) otherFactorList=(Scaling_WWgammaZ_WV_atgc_semileptonic_ch7) ] = 10.14
+
+==================================================================================================================
+
+			BACKGROUND
+
+	SHAPE
+
+RooSimultaneousOpt::model_b[ indexCat=CMS_channel ch1=pdf_binch1_bonly ch2=pdf_binch2_bonly ch3=pdf_binch3_bonly extraConstraints=() ] = 0.378503
+	RooProdPdf::pdf_binch3_bonly[ bkgDD_stat_ch5_Pdf * bkgDD_stat_ch6_Pdf * bkgDD_stat_ch7_Pdf * bkgDD_syst_even_Pdf * bkgDD_syst_odd_Pdf * bkgMC_stat_ch5_Pdf * bkgMC_stat_ch6_Pdf * bkgMC_stat_ch7_Pdf * bkgMC_syst_Pdf * lumi_8TeV_Pdf * sig_reco_Pdf * sig_stat_ch5_Pdf * sig_stat_ch6_Pdf * sig_stat_ch7_Pdf * pdf_binch3_bonly_nuis ] = 3.60732
+		SimpleGaussianConstraint::bkgDD_stat_ch5_Pdf[ x=bkgDD_stat_ch5 mean=bkgDD_stat_ch5_In sigma=1 ] = 1
+		RooAddPdf::pdf_binch3_bonly_nuis[ n_exp_binch3_proc_WV_semileptonic_bkg1_ch7 * shapeBkg_WV_semileptonic_bkg1_ch7_ch3Pdf + n_exp_binch3_proc_WV_semileptonic_bkg2_ch7 * shapeBkg_WV_semileptonic_bkg2_ch7_ch3Pdf ] = 3.60732
+			ProcessNormalization::n_exp_binch3_proc_WV_semileptonic_bkg1_ch7[ thetaList=(lumi_8TeV) asymmThetaList=(bkgMC_stat_ch7,bkgMC_syst) otherFactorList=() ] = 4.14
+			RooHistPdf::shapeBkg_WV_semileptonic_bkg1_ch7_ch3Pdf[ pdfObs=(W_pt_ch7) ] = 4.14
+
+	NORMALIZATION
+ProcessNormalization::n_exp_binch3_proc_WV_semileptonic_bkg1_ch7[ thetaList=(lumi_8TeV) asymmThetaList=(bkgMC_stat_ch7,bkgMC_syst) otherFactorList=() ] = 4.14
+
