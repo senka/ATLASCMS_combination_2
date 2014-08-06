@@ -753,7 +753,7 @@ even_background_DD_syst       trG     -                           -             
         card += """
 {leptons}_{codename}_signal_stat       trG     {err_up}                           -                             -""".format(leptons=leptons,codename=codename,err_down=stat_signal_err_rel_Down[ch],err_up=stat_signal_err_rel_Up[ch]-1.)
         card += """
-signal_recoth       trG     {err_up}                           {err_up}                             -""".format(leptons=leptons,codename=codename,err_down=syst_signal_sum_err_rel_Down[ch],err_up=syst_signal_sum_err_rel_Up[ch]-1.)
+signal_recoth       trG     {err_up}                           -                             -""".format(leptons=leptons,codename=codename,err_down=syst_signal_sum_err_rel_Down[ch],err_up=syst_signal_sum_err_rel_Up[ch]-1.)
 #        card += """
 #signal_th       trG     {err_up}                           -                             -""".format(leptons=leptons,codename=codename,err_down=syst_signal_th_err_rel_Down[ch],err_up=syst_signal_th_err_rel_Up[ch])
 
